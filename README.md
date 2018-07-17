@@ -5,6 +5,8 @@ Création d'un puissance 4 multijoueur avec l'utilisation des sockets
 # Auteur
 - Marie Cavallo
 - Frank Cadaux
+# Formateur
+- Alexis Gardin
 
 
 # License
