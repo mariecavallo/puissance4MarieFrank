@@ -25,6 +25,8 @@ public class Game extends Thread {
         }
     }
 
+    // salut
+
 
     @Override
     public void run() {
