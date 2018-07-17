@@ -2,6 +2,8 @@ package fr.formation.puissance4.Board;
 
 import fr.formation.puissance4.Piece.Jeton;
 
+import java.awt.*;
+
 public class Board {
     private Jeton[][] jetons;
 
@@ -12,4 +14,6 @@ public class Board {
     public Jeton[][] getJetons() {
         return jetons;
     }
+
+
 }
