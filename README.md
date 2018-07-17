@@ -1,10 +1,20 @@
 # Projet puissance 4
 Projet puissance 4 réalisé lors d'une formation
+
 # Objectif
 Création d'un puissance 4 multijoueur avec l'utilisation des sockets
+
+# Fonctionnalité
+- IA vs Joueur
+- Joueur vs Joueur
+- IA vs IA
+
 # Auteur
 - Marie Cavallo
 - Frank Cadaux
+
+
+
 
 
 # License
