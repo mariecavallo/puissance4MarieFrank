@@ -4,8 +4,8 @@ import fr.formation.puissance4.Board.Board;
 import javafx.scene.paint.Color;
 
 public abstract class Joueur {
-    protected Color color;
-    protected Board board;
+    public Color color;
+    public Board board;
 
     public Joueur(Color color, Board board) {
         this.color = color;
