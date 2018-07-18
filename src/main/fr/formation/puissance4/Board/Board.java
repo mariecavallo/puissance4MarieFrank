@@ -29,6 +29,8 @@ public class Board {
         for (int i = 0; (ligne + i) < 6; i++) {
             if (getJetons()[(ligne + i)][colonne].getColor() == color) {
                 compteur++;
+            } else {
+                break;
             }
         }
         if (compteur == 4)
@@ -43,11 +45,15 @@ public class Board {
         for (int j = 0; (colonne + j) < 7; j++) {
             if (getJetons()[(ligne)][colonne + j].getColor() == color) {
                 compteurGauche++;
+            } else {
+                break;
             }
         }
         for (int j = 1; (colonne - j) >= 0; j++) {
             if (getJetons()[(ligne)][colonne - j].getColor() == color) {
                 compteurDroit++;
+            } else {
+                break;
             }
         }
         if ((compteurGauche + compteurDroit) == 4)
@@ -63,11 +69,15 @@ public class Board {
         for (int i = 0,  j = 0 ; ligne + i < 6 && colonne - j >= 0 ; i++ , j++) {
             if (getJetons()[ligne + i][colonne - j].getColor() == color) {
                 compteurBas++;
+            } else {
+                break;
             }
         }
         for (int i = 1,  j = 1 ; ligne - i >= 0 && colonne + j < 7 ; i++ , j++) {
             if (getJetons()[ligne - i][colonne + j].getColor() == color) {
                 compteurHaut++;
+            } else {
+                break;
             }
         }
         if ((compteurBas + compteurHaut) == 4)
@@ -82,11 +92,15 @@ public class Board {
         for (int i = 0,  j = 0 ; ligne - i >= 0 && colonne - j >= 0 ; i++ , j++) {
             if (getJetons()[ligne - i][colonne - j].getColor() == color) {
                 compteurBas++;
+            } else {
+                break;
             }
         }
         for (int i = 1,  j = 1 ; ligne + i < 6 && colonne + j < 7 ; i++ , j++) {
             if (getJetons()[ligne + i][colonne + j].getColor() == color) {
                 compteurHaut++;
+            } else {
+                break;
             }
         }
         if ((compteurBas + compteurHaut) == 4)
