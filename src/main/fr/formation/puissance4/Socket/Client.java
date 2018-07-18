@@ -44,7 +44,7 @@ public class Client extends Lanceur {
                 msg = null;
             attendreMessage();
             }
-            System.out.println("Serveur déconecté");
+            System.out.println("Serveur déconnecté");
             out.close();
 
             clientSocket.close();
