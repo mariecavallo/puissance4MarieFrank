@@ -20,8 +20,8 @@ public class JoueurHumain extends Joueur {
 
     @Override
     public String envoyer() {
-
-        if (gagnant || !validiteCoupAdverse)
+        Controle controle = new Controle();
+        if (gagnant || !validiteCoupAdverse || controle.controleGrillePleine(board) )
             return "Fin";
         else {
             String choix = descentePion(choixColonne());
