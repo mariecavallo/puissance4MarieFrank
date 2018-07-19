@@ -17,12 +17,21 @@ public class Controle {
         }
     }
 
+    public boolean controleChiffre (int colonne){
+
+        if (colonne != (int) colonne){
+            System.out.println("Vous devez entrer un chiffre.");
+            return false;
+        } else
+            return true;
+    }
+
 
 
     // retour true si le pion du dessous est vide
 
     public boolean controlePionDessous(Board lesJetons, int ligne, int colonne) {
-        if (ligne != 6 && lesJetons.getJetons()[ligne - 1][colonne].getColor().equals(Color.TRANSPARENT)) {
+        if (ligne != 5  && lesJetons.getJetons()[ligne + 1][colonne].getColor().equals(Color.TRANSPARENT)) {
             return true;
         } else {
             return false;

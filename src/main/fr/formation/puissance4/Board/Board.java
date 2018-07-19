@@ -44,14 +44,14 @@ public class Board {
         int compteurDroit = 0;
         for (int j = 0; (colonne + j) < 7; j++) {
             if (getJetons()[(ligne)][colonne + j].getColor() == color) {
-                compteurGauche++;
+                compteurDroit++;
             } else {
                 break;
             }
         }
         for (int j = 1; (colonne - j) >= 0; j++) {
             if (getJetons()[(ligne)][colonne - j].getColor() == color) {
-                compteurDroit++;
+                compteurGauche++;
             } else {
                 break;
             }
@@ -109,6 +109,8 @@ public class Board {
             return false;
 
     }
+
+
 
 
 }
