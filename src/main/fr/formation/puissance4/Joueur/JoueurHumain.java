@@ -40,7 +40,7 @@ public class JoueurHumain extends Joueur {
         Controle controle = new Controle();
         if (!board.getJetons()[ligne][colonne].getColor().equals(Color.TRANSPARENT) || controle.controlePionDessous(board, ligne, colonne)){
             validiteCoupAdverse = false;
-            System.out.println("erreur controle");
+            System.out.println("Coup non valide.");
         } else {
             board.getJetons()[ligne][colonne].setColor(Color.valueOf(strings[2]));
         }

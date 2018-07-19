@@ -1,6 +1,8 @@
 package fr.formation.puissance4;
 
 import fr.formation.puissance4.Joueur.JoueurHumain;
+import fr.formation.puissance4.Joueur.JoueurIA;
+import fr.formation.puissance4.Joueur.StrategyRnd;
 import fr.formation.puissance4.Socket.Client;
 import fr.formation.puissance4.Socket.Serveur;
 import fr.formation.puissance4.Board.Board;
@@ -31,8 +33,19 @@ public class Game extends Thread {
         System.out.println("1 - Client 2 - Serveur");
         Scanner scanner = new Scanner(System.in);
         if (scanner.nextInt() == 1) {
-            new Client(new JoueurHumain(Color.YELLOW, new Board(jetons))).start();
+            System.out.println("1 - Humain 2 - IA");
+            Scanner scanner1 = new Scanner(System.in);
+            if (scanner1.nextInt() == 1)
+                new Client(new JoueurHumain(Color.YELLOW, new Board(jetons))).start();
+            else
+                new Client(new JoueurIA(Color.YELLOW, new Board(jetons), new StrategyRnd())).start();
+
         } else
-            new Serveur(new JoueurHumain(Color.RED, new Board(jetons))).start();
+            System.out.println("1 - Humain 2 - IA");
+            Scanner scanner1 = new Scanner(System.in);
+            if (scanner1.nextInt() == 1)
+                new Serveur(new JoueurHumain(Color.RED, new Board(jetons))).start();
+            else
+                new Serveur(new JoueurIA(Color.RED, new Board(jetons), new StrategyRnd())).start();
     }
 }
