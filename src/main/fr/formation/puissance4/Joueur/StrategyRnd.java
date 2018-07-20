@@ -11,7 +11,7 @@ public class StrategyRnd extends Strategy {
     }
 
     @Override
-    public String choixPosition(Board board, Color color) {
+    public String choixPosition(Board board, Color color, Color colorAdverse) {
         String choix = descentePion(board, color,choixColonne(board));
         if (Color.RED.equals(color))
             return choix + ",RED";

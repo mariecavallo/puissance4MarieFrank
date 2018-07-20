@@ -17,13 +17,20 @@ public class JoueurIA extends Joueur {
         this.strategy = strategy;
     }
 
+    public Color couleurAdverse (Color color){
+        if (Color.RED.equals(color))
+            return Color.YELLOW;
+        else
+            return Color.RED;
+    }
+
     @Override
     public String envoyer() {
         Controle controle = new Controle();
         if (gagnant || !validiteCoupAdverse || controle.controleGrillePleine(board) ) {
             return "Fin";
         } else {
-            return strategy.choixPosition(board, color);
+            return strategy.choixPosition(board, color, couleurAdverse(color));
         }
     }
 
@@ -42,6 +49,7 @@ public class JoueurIA extends Joueur {
             gagnant = true ;
             System.out.println("Vous avez perdu... Pion gagnant : ["+ligne+"] ["+colonne+"]");
         }
-
     }
+
+
 }

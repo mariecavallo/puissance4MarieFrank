@@ -2,6 +2,7 @@ package fr.formation.puissance4;
 
 import fr.formation.puissance4.Joueur.JoueurHumain;
 import fr.formation.puissance4.Joueur.JoueurIA;
+import fr.formation.puissance4.Joueur.StrategyMarie;
 import fr.formation.puissance4.Joueur.StrategyRnd;
 import fr.formation.puissance4.Socket.Client;
 import fr.formation.puissance4.Socket.Serveur;
@@ -38,7 +39,7 @@ public class Game extends Thread {
             if (scanner1.nextInt() == 1)
                 new Client(new JoueurHumain(Color.YELLOW, new Board(jetons))).start();
             else
-                new Client(new JoueurIA(Color.YELLOW, new Board(jetons), new StrategyRnd())).start();
+                new Client(new JoueurIA(Color.YELLOW, new Board(jetons), new StrategyMarie())).start();
 
         } else
             System.out.println("1 - Humain 2 - IA");
@@ -46,6 +47,6 @@ public class Game extends Thread {
             if (scanner1.nextInt() == 1)
                 new Serveur(new JoueurHumain(Color.RED, new Board(jetons))).start();
             else
-                new Serveur(new JoueurIA(Color.RED, new Board(jetons), new StrategyRnd())).start();
+                new Serveur(new JoueurIA(Color.RED, new Board(jetons), new StrategyMarie())).start();
     }
 }
