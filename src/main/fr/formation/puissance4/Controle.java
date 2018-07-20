@@ -43,16 +43,12 @@ public class Controle {
 // retour true si la grille est pleine
 
     public boolean controleGrillePleine(Board lesJetons) {
-        int compteur = 0;
-        for (int j = 0; j < 7; j++ ) {
-            if (!lesJetons.getJetons()[0][j].getColor().equals(Color.TRANSPARENT)) {
-                compteur++;
+        for (int j = 0; j < 7; j++) {
+            if (lesJetons.getJetons()[0][j].getColor().equals(Color.TRANSPARENT)) {
+                return false;
             }
         }
-        if (compteur==7)
-            return true;
-        else
-            return false;
+        return true;
     }
 
 
